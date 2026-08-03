@@ -58,7 +58,3 @@ GAN training is unstable because both networks chase a moving target. This proje
 ## Results
 
 The Generator learns to produce recognizably face-like images purely from noise, using only adversarial feedback — no labels, no reconstruction loss.
-
-## Acknowledgements
-
-Based on the **Introduction to Deep Learning** course (HSE / Coursera, `hse-aml/intro-to-dl`), Week 4 GAN assignment.
