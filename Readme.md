@@ -2,7 +2,7 @@
 
 A Deep Convolutional Generative Adversarial Network (DCGAN) that learns to synthesize realistic human face images by training a **Generator** and a **Discriminator** against each other in an adversarial game.
 
-![GAN Architecture](gan.png)
+![GAN Architecture](https://raw.githubusercontent.com/pavithraturlapati/Generating-Faces-with-a-DCGAN-using-Adversarial-Task/main/gan.png)
 
 ## Overview
 
@@ -13,7 +13,7 @@ This project explores **generative modeling** — teaching a network to produce 
 
 Neither network is ever shown a "correct" target output directly — the Generator only ever learns through the Discriminator's feedback. As training progresses, both networks get better in tandem, ideally reaching a point where the Generator's fakes are indistinguishable from real data.
 
-![Noise to Face](noise_to_face.png)
+![Noise to Face](https://raw.githubusercontent.com/pavithraturlapati/Generating-Faces-with-a-DCGAN-using-Adversarial-Task/main/noise_to_face.png)
 
 ## The Minimax Objective
 
@@ -33,7 +33,7 @@ D wants to maximize this (correctly separate real from fake); G wants to minimiz
 
 **Discriminator** — stacked `Conv2D` + `MaxPool2D` blocks (16→32→64→128 filters, standard CNN feature-depth progression) → `Dense(256, tanh)` → `Dense(2, log_softmax)` for real/fake classification.
 
-![GAN Concept](gan.png)
+![GAN Concept](https://raw.githubusercontent.com/pavithraturlapati/Generating-Faces-with-a-DCGAN-using-Adversarial-Task/main/gan.png)
 
 ## Training Procedure
 
@@ -65,5 +65,9 @@ GAN training is unstable because both networks chase a moving target. This proje
 
 The Generator learns to produce recognizably face-like images purely from noise, using only adversarial feedback — no labels, no reconstruction loss.
 
-![Sample Generated Faces](nvidia_cool_gan.png)
+![Sample Generated Faces](https://raw.githubusercontent.com/pavithraturlapati/Generating-Faces-with-a-DCGAN-using-Adversarial-Task/main/nvidia_cool_gan.png)
 
+
+## Acknowledgements
+
+Based on the **Introduction to Deep Learning** course (HSE / Coursera, `hse-aml/intro-to-dl`), Week 4 GAN assignment.
