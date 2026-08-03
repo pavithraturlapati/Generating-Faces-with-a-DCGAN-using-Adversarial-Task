@@ -67,7 +67,3 @@ The Generator learns to produce recognizably face-like images purely from noise,
 
 ![Sample Generated Faces](nvidia_cool_gan.png)
 
-
-## Acknowledgements
-
-Based on the **Introduction to Deep Learning** course (HSE / Coursera, `hse-aml/intro-to-dl`), Week 4 GAN assignment.
