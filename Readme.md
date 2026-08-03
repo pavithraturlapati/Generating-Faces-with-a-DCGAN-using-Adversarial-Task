@@ -2,8 +2,6 @@
 
 A Deep Convolutional Generative Adversarial Network (DCGAN) that learns to synthesize realistic human face images by training a **Generator** and a **Discriminator** against each other in an adversarial game.
 
-![GAN Architecture](https://raw.githubusercontent.com/pavithraturlapati/Generating-Faces-with-a-DCGAN-using-Adversarial-Task/main/gan.png)
-
 ## Overview
 
 This project explores **generative modeling** — teaching a network to produce new, realistic data rather than classify or predict on existing data. Following Ian Goodfellow's original GAN formulation, two networks are trained simultaneously with opposing goals:
@@ -12,8 +10,6 @@ This project explores **generative modeling** — teaching a network to produce 
 - The **Discriminator (D)** looks at real and generated images and tries to tell them apart.
 
 Neither network is ever shown a "correct" target output directly — the Generator only ever learns through the Discriminator's feedback. As training progresses, both networks get better in tandem, ideally reaching a point where the Generator's fakes are indistinguishable from real data.
-
-![Noise to Face](https://raw.githubusercontent.com/pavithraturlapati/Generating-Faces-with-a-DCGAN-using-Adversarial-Task/main/noise_to_face.png)
 
 ## The Minimax Objective
 
@@ -32,8 +28,6 @@ D wants to maximize this (correctly separate real from fake); G wants to minimiz
 **Generator** — noise (256-dim) → `Dense` → reshape to (8,8,10) → stacked `Deconv2D` (transposed convolutions, which *learn* how to upsample) + `UpSampling2D` layers → final `Conv2D` producing a 36×36×3 image. ELU activations are used throughout to keep gradients healthy during unstable early training.
 
 **Discriminator** — stacked `Conv2D` + `MaxPool2D` blocks (16→32→64→128 filters, standard CNN feature-depth progression) → `Dense(256, tanh)` → `Dense(2, log_softmax)` for real/fake classification.
-
-![GAN Concept](https://raw.githubusercontent.com/pavithraturlapati/Generating-Faces-with-a-DCGAN-using-Adversarial-Task/main/gan.png)
 
 ## Training Procedure
 
@@ -64,9 +58,6 @@ GAN training is unstable because both networks chase a moving target. This proje
 ## Results
 
 The Generator learns to produce recognizably face-like images purely from noise, using only adversarial feedback — no labels, no reconstruction loss.
-
-![Sample Generated Faces](https://raw.githubusercontent.com/pavithraturlapati/Generating-Faces-with-a-DCGAN-using-Adversarial-Task/main/nvidia_cool_gan.png)
-
 
 ## Acknowledgements
 
