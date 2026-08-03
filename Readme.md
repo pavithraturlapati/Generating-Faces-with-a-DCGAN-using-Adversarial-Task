@@ -1,8 +1,6 @@
-# Adversarial Task — Generating Faces with a DCGAN
+# Generating Faces with a DCGAN - Adversarial Task
 
 A from-scratch implementation of a Generative Adversarial Network (GAN) that learns to synthesize human face images by training a **Generator** and a **Discriminator** against each other in a minimax game.
-
-![GAN Concept](gan.png)
 
 ## What Is This Project About?
 
@@ -11,8 +9,6 @@ This project explores **generative modeling** — teaching a neural network to p
 - The **Generator** starts with random noise and learns to turn it into a face.
 - The **Discriminator** looks at real faces and generated (fake) faces, and learns to tell them apart.
 - As training progresses, the Generator gets better at fooling the Discriminator, and the Discriminator gets better at catching fakes — pushing the Generator toward increasingly realistic output.
-
-![Noise to Face](noise_to_face.png)
 
 ## Dataset
 
@@ -45,7 +41,6 @@ A convolutional binary classifier that outputs log-probabilities for `real` vs `
 | Flatten → Dense | 256 units, tanh |
 | Dense (output) | 2 units, log-softmax |
 
-![GAN Architecture](gan.png)
 
 ## Training
 
@@ -65,19 +60,8 @@ A convolutional binary classifier that outputs log-probabilities for `real` vs `
 6. Periodically sample generated faces and plot the Discriminator's output distribution on real vs. fake data to monitor convergence.
 7. Visualize the final batch of generated faces.
 
-## What We Ended Up With
+## Results
 
 After training, the Generator produces recognizably face-like images from pure noise — evidence that it learned the underlying structure of human faces (position of eyes, nose, mouth, general shading) purely from adversarial feedback, with no explicit labels or reconstruction loss involved.
 
-![Sample Generated Faces](nvidia_cool_gan.png)
-
 The notebook also tracks the Discriminator's confidence scores on real vs. generated batches (`D(x)` vs `D(G(z))`) over time, showing the two distributions converge as the Generator improves — a visual signal of the adversarial game approaching balance. As noted in the notebook, longer training (well beyond 15k iterations) yields noticeably sharper, more realistic results.
-
-## Repository Contents
-
-- `Adversarial_task.ipynb` — the complete, runnable notebook (data loading, model definitions, training loop, and visualizations).
-- `README.md` — this file.
-
-## Acknowledgements
-
-This assignment is based on the **Introduction to Deep Learning** course (HSE / Coursera, `hse-aml/intro-to-dl`), Week 4 GAN assignment.
