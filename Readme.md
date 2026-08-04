@@ -58,3 +58,5 @@ GAN training is unstable because both networks chase a moving target. This proje
 ## Results
 
 The Generator learns to produce recognizably face-like images purely from noise, using only adversarial feedback — no labels, no reconstruction loss.
+
+<img width="1236" height="640" alt="noise_to_face" src="https://github.com/user-attachments/assets/bff9f367-ddd4-4637-9a64-accfa36d3891" />
